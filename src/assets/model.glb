@@ -1,0 +1,7 @@
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+// Inside useEffect:
+const loader = new GLTFLoader();
+loader.load('/assets/model.glb', (gltf) => {
+  scene.add(gltf.scene);
+  gltf.scene.rotation.y += 0.01; // Auto-rotation in animate()
+});
